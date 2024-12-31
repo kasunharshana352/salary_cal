@@ -1,0 +1,65 @@
+{
+  "valid_inputs": [
+    { "input": "50K", "expected": 50000 },
+    { "input": "1.5M", "expected": 1500000 },
+    { "input": "2B", "expected": 2000000000 },
+    { "input": "100L", "expected": 10000000 }
+  ],
+  "invalid_inputs": [
+    {
+      "input": "50X",
+      "expected_error": "Input contains invalid characters."
+    },
+    {
+      "input": "abc",
+      "expected_error": "Input contains invalid characters."
+    },
+    {
+      "input": "",
+      "expected_error": "Input cannot be empty."
+    },
+    {
+      "input": "100&",
+      "expected_error": "Input contains invalid characters."
+    },
+    {
+      "input": "1.5MM",
+      "expected_error": "Input contains invalid characters."
+    }
+  ],
+  "salary_calculations": [
+    {
+      "gross_salary": 50000,
+      "result": {
+        "Gross Salary": 50000,
+        "Employer EPF": 6000,
+        "Employee EPF": 4000,
+        "Employer ETF": 1500,
+        "Tax": 0,
+        "Take-home Salary": 46000,
+        "Total Benefit": 57500
+      }
+    },
+    {
+      "gross_salary": 1500000,
+      "result": {
+        "Gross Salary": 1500000,
+        "Employer EPF": 180000,
+        "Employee EPF": 120000,
+        "Employer ETF": 45000,
+        "Tax": 459000,
+        "Take-home Salary": 921000,
+        "Total Benefit": 1725000
+      }
+    }
+  ],
+  "tax_calculation": [
+    { "gross_salary": 100000, "expected_tax": 0 },
+    { "gross_salary": 150000, "expected_tax": 3000 },
+    { "gross_salary": 200000, "expected_tax": 9000 },
+    { "gross_salary": 250000, "expected_tax": 18000 },
+    { "gross_salary": 300000, "expected_tax": 30000 },
+    { "gross_salary": 350000, "expected_tax": 45000 },
+    { "gross_salary": 400000, "expected_tax": 63000 }
+  ]
+}
